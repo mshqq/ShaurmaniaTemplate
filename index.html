@@ -11,21 +11,27 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    
     <header>
       <nav class="nav">
         <div class="nav__container container">
-            <button onclick="topFunction()" id="topBtn">
-                <svg class="arrow-top-3" viewBox="0 0 5 9">
-                    <path d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z" />
-                </svg>
-            </button>
+          <button onclick="topFunction()" id="topBtn">
+            <svg class="arrow-top-3" viewBox="0 0 5 9">
+              <path
+                d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z"
+              />
+            </svg>
+          </button>
           <img class="nav__logo" src="img/header/logo.svg" alt="Шаурмания" />
           <div class="nav__controls">
             <p class="nav__number">+7 (914) 123 45-67</p>
-            <button class="nav__btn">Заказать звонок</button>
+            <button class="nav__btn" id="callbackBtn" onclick="callback()">Заказать звонок</button>
           </div>
         </div>
       </nav>
@@ -77,11 +83,17 @@
         <div class="menu__container container">
           <h3 class="menu__title">Наше меню</h3>
           <ul class="menu__categories">
-            <button class="menu__category active">Все</button>
-            <button class="menu__category">Шаурма</button>
-            <button class="menu__category">Кесадилья</button>
-            <button class="menu__category">Снеки</button>
-            <button class="menu__category">Напитки</button>
+            <button class="menu__category active" onclick="selectCategory(id)" id="all">Все</button>
+            <button class="menu__category" onclick="selectCategory(id)" id="shaverma">
+              Шаурма
+            </button>
+            <button class="menu__category" onclick="selectCategory(id)" id="kesadilya">
+              Кесадилья
+            </button>
+            <button class="menu__category" onclick="selectCategory(id)" id="snacks">Снеки</button>
+            <button class="menu__category" onclick="selectCategory(id)" id="drinks    ">
+              Напитки
+            </button>
           </ul>
           <ul class="menu__goodies">
             <div class="menu__card">
@@ -165,53 +177,67 @@
       </section>
       <section class="form">
         <div class="form__container container">
-            <div class="form__info">
-                <h3 class="form__info-title">О компании</h3>
-                <ul class="form__info-features">
-                    <li class="form__info-feature">ИП Труфанов Н.Д.</li>
-                    <li class="form__info-feature">Работаем с 2022 года</li>
-                    <li class="form__info-feature">13 точек в Чите</li>
-                    <li class="form__info-feature">Цены от 239 ₽</li>
-                </ul>
-            </div>
-            <div class="form-block">
-                <h3 class="form-title">Получайте акции первыми</h3>
-                <form class="form-group" action="">
-                    <input class="form-entry" type="text" name="" id="" / placeholder="Ваше имя">
-                    <input class="form-entry" type="text" name="" id="" / placeholder="Email">
-                    <input class="form-button" type="submit" value="Подписаться" />
-                </form>
-            </div>
+          <div class="form__info">
+            <h3 class="form__info-title">О компании</h3>
+            <ul class="form__info-features">
+              <li class="form__info-feature">ИП Труфанов Н.Д.</li>
+              <li class="form__info-feature">Работаем с 2022 года</li>
+              <li class="form__info-feature">13 точек в Чите</li>
+              <li class="form__info-feature">Цены от 239 ₽</li>
+            </ul>
+          </div>
+          <div class="form-block">
+            <h3 class="form-title">Получайте акции первыми</h3>
+            <form class="form-group" action="">
+              <input
+                class="form-entry"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Ваше имя"
+                required
+              />
+              <input
+                class="form-entry"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
+              <input class="form-button" type="button" value="Подписаться" onclick="subscribe()" />
+            </form>
+          </div>
         </div>
       </section>
     </main>
     <footer class="footer">
-        <div class="footer__top">
-            <div class="footer__top-container container">
-                <img src="img/footer/logo.svg" alt="" class="footer__top-logo">
-                <p class="footer__top-copyright">© 2026 Шаурмания, г. Чита</p>
-            </div>
+      <div class="footer__top">
+        <div class="footer__top-container container">
+          <img src="img/footer/logo.svg" alt="" class="footer__top-logo" />
+          <p class="footer__top-copyright">© 2026 Шаурмания, г. Чита</p>
         </div>
-        <div class="footer__bottom">
-            <div class="footer__bottom-container container">
-                <h5 class="footer__bottom-title">Наши точки</h5>
-                <ul class="footer__bottom-addresses">
-                    <li class="footer__bottom-address">ул. Ленина 83</li>
-                    <li class="footer__bottom-address">Бабушкина 30</li>
-                    <li class="footer__bottom-address">Иркутская 16</li>
-                    <li class="footer__bottom-address">Амурская 98</li>
-                    <li class="footer__bottom-address">5-й мкр 29/2</li>
-                    <li class="footer__bottom-address">Столярова 83</li>
-                    <li class="footer__bottom-address">Бабушкина 98</li>
-                    <li class="footer__bottom-address">Курнатовского 25а/3</li>
-                    <li class="footer__bottom-address">Виля Липатова 26</li>
-                    <li class="footer__bottom-address">ТЦ Столица (Генерала Белика 1)</li>
-                    <li class="footer__bottom-address">Ленина 149</li>
-                    <li class="footer__bottom-address">мкр. Девичья Сопка 1а</li>
-                    <li class="footer__bottom-address">пр. Советов 7б</li>
-                </ul>
-            </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__bottom-container container">
+          <h5 class="footer__bottom-title">Наши точки</h5>
+          <ul class="footer__bottom-addresses">
+            <li class="footer__bottom-address">ул. Ленина 83</li>
+            <li class="footer__bottom-address">Бабушкина 30</li>
+            <li class="footer__bottom-address">Иркутская 16</li>
+            <li class="footer__bottom-address">Амурская 98</li>
+            <li class="footer__bottom-address">5-й мкр 29/2</li>
+            <li class="footer__bottom-address">Столярова 83</li>
+            <li class="footer__bottom-address">Бабушкина 98</li>
+            <li class="footer__bottom-address">Курнатовского 25а/3</li>
+            <li class="footer__bottom-address">Виля Липатова 26</li>
+            <li class="footer__bottom-address">ТЦ Столица (Генерала Белика 1)</li>
+            <li class="footer__bottom-address">Ленина 149</li>
+            <li class="footer__bottom-address">мкр. Девичья Сопка 1а</li>
+            <li class="footer__bottom-address">пр. Советов 7б</li>
+          </ul>
         </div>
+      </div>
     </footer>
     <script src="js/main.js"></script>
   </body>

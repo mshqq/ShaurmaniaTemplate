@@ -22,6 +22,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 ul {
@@ -40,6 +41,11 @@ button {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  display: block;
 }
 
 .arrow-top-3 {
@@ -62,6 +68,12 @@ html {
   border-radius: 14px;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .nav {
   background-color: var(--accent-primary);
   padding-block: 7px 13px;
@@ -70,6 +82,7 @@ html {
 .container {
   max-width: 1320px;
   margin: auto;
+  padding-inline: 20px;
 }
 
 .nav__container {
@@ -108,8 +121,7 @@ html {
 
   color: var(--color-white);
 
-  padding-top: 40px;
-  padding-bottom: 81px;
+  padding-block: 40px;
 }
 
 .slider__container {
@@ -176,6 +188,7 @@ html {
 
 .features__list {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 
@@ -183,12 +196,14 @@ html {
   background-color: var(--features-bg);
   border-radius: 16px;
 
-  padding: 70px 97px 36px 97px;
+  padding: 5% 8% 3% 8%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+
+  text-align: center;
 }
 
 .feature__img {
@@ -251,15 +266,13 @@ html {
 
 .menu__card-img {
   border-radius: 14px 14px 0 0;
-  width: 305px;
-  height: 233px;
 }
 
 .menu__goodies {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 20px;
 }
 
 .menu__card {
@@ -270,7 +283,7 @@ html {
 .menu__card-desc {
   background-color: var(--card-bg);
   border-radius: 0 0 14px 14px;
-  max-width: 305px;
+  width: 100%;
   padding: 12px 17px 17px 17px;
 }
 
@@ -298,8 +311,8 @@ html {
 }
 
 .about-us__img {
-  width: 630px;
-  height: 590px;
+  max-width: 630px;
+  max-height: 590px;
   border-radius: 20px;
 }
 
@@ -358,6 +371,7 @@ html {
   font-weight: 900;
   border: none;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .form-entry {
@@ -433,4 +447,94 @@ html {
 
 .footer__bottom-address:last-child {
   grid-column: 1 / -1;
+}
+
+@media (max-width: 1314px) {
+  .menu__card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Планшет */
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav__logo {
+    max-width: 240px;
+  }
+
+  .form-entry,
+  .form-button {
+    width: 100%;
+  }
+
+  .about-us__img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .menu__card-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* мобилка */
+
+  .menu__goodies {
+    gap: 20px;
+  }
+
+  .menu__categories {
+    flex-wrap: wrap;
+  }
+
+  .features__list {
+    flex-direction: column;
+  }
+
+  .about-us__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .menu__card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-us__container,
+  .form__container {
+    flex-direction: column;
+  }
+
+  .form__container {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+
+    padding-inline: 20px;
+  }
+
+  .form__info {
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  .form {
+    padding-block: 60px;
+  }
+
+  .form-block {
+    width: 100%;
+  }
+
+  .nav__controls {
+    padding-top: 10px;
+    flex-direction: column;
+  }
 }
