@@ -185,6 +185,7 @@ button {
 
 .menu {
   background-color: var(--color-dark);
+  padding-bottom: 40px;
 }
 
 .menu__container {
@@ -261,4 +262,37 @@ button {
   font-size: 20px;
   font-weight: 900;
   color: var(--accent-secondary);
+}
+
+.about-us {
+  padding-block: 40px 40px;
+}
+
+.about-us__container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-us__img {
+  width: 630px;
+  height: 590px;
+  border-radius: 20px;
+}
+
+.about-us__title {
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.about-us__subtitle {
+  max-width: 630px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.about-us__desc {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
