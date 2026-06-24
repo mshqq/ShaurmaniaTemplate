@@ -540,3 +540,11 @@ header {
     flex-direction: column;
   }
 }
+
+.alert {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
